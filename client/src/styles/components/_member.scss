@@ -1,0 +1,49 @@
+.member-table {
+    background: rgba(10, 25, 47, 0.95);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(100, 150, 200, 0.3);
+}
+
+.member-table thead {
+    background: linear-gradient(135deg, #1a3a5c 0%, #0d2137 100%);
+}
+
+.member-table tr th {
+    color: #87ceeb;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid rgba(100, 150, 200, 0.4);
+    padding: 14px 12px;
+}
+
+.member-table tbody tr {
+    background: rgba(15, 35, 60, 0.8);
+    transition: background 0.2s ease;
+}
+
+.member-table tbody tr:nth-child(even) {
+    background: rgba(20, 45, 75, 0.8);
+}
+
+.member-table tbody tr:hover {
+    background: rgba(30, 60, 100, 0.9);
+}
+
+.member-table td {
+    color: #e0e6ed;
+    border-bottom: 1px solid rgba(100, 150, 200, 0.2);
+    padding: 12px;
+    font-size: 14px;
+}
+
+.action-plan-table {
+    background: rgba(173, 216, 230, 0.2);
+}
+
+.action-plan-table tr th , .action-plan-table td{
+    color: black;
+}
+

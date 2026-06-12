@@ -1,0 +1,505 @@
+.true-logo {
+  width: 220px;
+}
+
+.body-title {
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: white;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.card {
+  border-radius: 5px;
+  background: rgba(173, 216, 230, 0.2);
+  height: 120px;
+  color: white;
+  padding: 20px 15px;
+}
+
+.gauge {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  background: rgba(173, 216, 230, 0.2);
+  padding: 20px 15px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.gauge-subtitle-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.gauge-subtitle {
+  position: absolute;
+  bottom: 70px;
+  left: 95px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.gauge-subtitle-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.project_by_project {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  background: rgba(173, 216, 230, 0.2);
+  padding: 20px 15px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.project_by_project-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1589ff;
+}
+
+.project_by_project-grid {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gauge-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #1589ff;
+}
+
+.gauge-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.gauge-card {
+  width: 400px !important;
+}
+
+.gauge-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #1589ff;
+}
+
+.card-subtitle {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.card-img-flex {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card-img {
+  position: absolute;
+  bottom: 20px;
+  width: 35px;
+}
+
+.more-detail:hover {
+  box-shadow: rgba(44, 187, 99, .35) 0 -25px 18px -14px inset, rgba(44, 187, 99, .25) 0 1px 2px, rgba(44, 187, 99, .25) 0 2px 4px, rgba(44, 187, 99, .25) 0 4px 8px, rgba(44, 187, 99, .25) 0 8px 16px, rgba(44, 187, 99, .25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.more-detail {
+  bottom: 16px;
+  position: absolute;
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset, rgba(44, 187, 99, .15) 0 1px 2px, rgba(44, 187, 99, .15) 0 2px 4px, rgba(44, 187, 99, .15) 0 4px 8px, rgba(44, 187, 99, .15) 0 8px 16px, rgba(44, 187, 99, .15) 0 16px 32px;
+  color: green;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 13px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.gauge-flex {
+  width: 100%;
+}
+
+.scroll-container {
+  max-height: none;
+  overflow: visible;
+}
+
+@media (max-height: 1024px) {
+  .scroll-container {
+    max-height: 700px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .card-subtitle {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .card-subtitle {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .card-subtitle {
+    font-size: 20px;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .gauge-flex {
+    display: flex;
+    gap: 10px;
+  }
+
+  .gauge {
+    flex: 1;
+    width: auto;
+  }
+
+  .gauge-grid {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .gauge-container {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 300px;
+  }
+
+  .chart-container {
+    flex: 1;
+    min-width: 250px;
+    max-width: none;
+  }
+
+  .project-status-chart {
+    flex: 1;
+    min-width: 280px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .gauge-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .gauge-container {
+    max-width: 350px;
+  }
+
+  .project-status-chart {
+    min-width: 300px;
+    max-width: 100%;
+  }
+}
+
+// Chart container for responsive charts
+.chart-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+// Project status chart specific styles
+.project-status-chart {
+  max-width: none;
+}
+
+// Ensure tables use full width on desktop
+.MuiTableContainer-root {
+  width: 100% !important;
+}
+
+// Desktop full width styling
+@media screen and (min-width: 769px) {
+  .body_container {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .gauge {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .project_by_project {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .card-grid {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .member-table {
+    width: 100% !important;
+  }
+
+  .gauge .MuiTableContainer-root {
+    width: 100% !important;
+  }
+
+  .MuiTable-root {
+    width: 100% !important;
+    table-layout: auto !important;
+  }
+}
+
+// Mobile responsive styles
+@media screen and (max-width: 768px) {
+  .body-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr !important;
+    gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .card {
+    height: auto;
+    min-height: 100px;
+    padding: 15px 12px;
+    box-sizing: border-box;
+  }
+
+  .card-title {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .card-subtitle {
+    font-size: 13px;
+  }
+
+  .more-detail {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
+
+  .gauge {
+    padding: 15px 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .gauge-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .gauge-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .gauge-card {
+    width: 100% !important;
+    max-width: 280px !important;
+  }
+
+  .gauge-container {
+    margin-bottom: 15px;
+  }
+
+  .gauge-subtitle {
+    position: static;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .chart-container {
+    max-width: 320px;
+  }
+
+  .project-status-chart {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .project_by_project {
+    padding: 15px 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .project_by_project-title {
+    font-size: 18px;
+  }
+
+  .project_by_project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  // Table responsive - show only essential columns
+  .member-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+
+    th, td {
+      font-size: 11px !important;
+      padding: 8px 4px !important;
+    }
+
+    // Hide less important columns on mobile - keep #, Name, All Projects
+    th:nth-child(4),
+    td:nth-child(4),
+    th:nth-child(5),
+    td:nth-child(5),
+    th:nth-child(6),
+    td:nth-child(6),
+    th:nth-child(7),
+    td:nth-child(7),
+    th:nth-child(8),
+    td:nth-child(8) {
+      display: none;
+    }
+
+    // Smaller member photos
+    img {
+      width: 35px !important;
+      height: 35px !important;
+    }
+  }
+
+  // Search and title flex
+  .gauge > div:first-child {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 10px;
+
+    .MuiTextField-root {
+      width: 100% !important;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card-grid {
+    gap: 6px;
+  }
+
+  .card {
+    padding: 12px 10px;
+    min-height: 80px;
+  }
+
+  .card-title {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .card-subtitle {
+    font-size: 11px;
+  }
+
+  .gauge-title {
+    font-size: 14px;
+  }
+
+  .gauge-card {
+    max-width: 220px !important;
+  }
+
+  .chart-container {
+    max-width: 280px;
+  }
+
+  .project_by_project-title {
+    font-size: 16px;
+  }
+
+  // Table - show only most essential columns on small mobile
+  .member-table {
+    th, td {
+      font-size: 10px !important;
+      padding: 6px 3px !important;
+    }
+
+    // Smaller photos
+    img {
+      width: 28px !important;
+      height: 28px !important;
+    }
+  }
+}

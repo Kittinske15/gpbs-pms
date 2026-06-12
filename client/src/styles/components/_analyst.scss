@@ -1,0 +1,463 @@
+// AI Analyst page — competitive deep-dive
+// Reuses .App / .body-grid / .body_container shell from _sidebar.scss
+
+.analyst-source-pill {
+    font-size: 12px;
+    font-weight: normal;
+    color: #cfe6ff;
+    background: rgba(21, 137, 255, 0.18);
+    border: 1px solid rgba(21, 137, 255, 0.35);
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+.analyst-tabs {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 16px;
+
+    .MuiTab-root {
+        color: #cfe6ff;
+        font-weight: 600;
+        text-transform: none;
+        font-size: 14px;
+    }
+    .MuiTab-root.Mui-selected {
+        color: #fff;
+    }
+}
+
+.analyst-subtabs {
+    margin-bottom: 12px;
+
+    .MuiTab-root {
+        color: #cfe6ff;
+        text-transform: none;
+        font-size: 13px;
+    }
+    .MuiTab-root.Mui-selected {
+        color: #fff;
+    }
+}
+
+.analyst-tab {
+    width: 100%;
+    color: #fff;
+}
+
+.analyst-section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1589ff;
+    margin: 14px 0 10px 0;
+    line-height: 1.35;
+}
+
+.analyst-cite {
+    font-size: 11px;
+    color: #9ec3e6;
+    margin-left: 4px;
+    opacity: 0.75;
+}
+
+.analyst-foot {
+    font-size: 11px;
+    color: #9ec3e6;
+    margin-top: 6px;
+}
+
+// ── KPI strip ────────────────────────────────────────────────────────────
+.analyst-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.analyst-kpi {
+    background: rgba(173, 216, 230, 0.12);
+    border-radius: 8px;
+    padding: 12px 14px;
+    border-left: 4px solid #1589ff;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &.tone-ok    { border-left-color: #4dd07b; }
+    &.tone-warn  { border-left-color: #f6c453; }
+    &.tone-bad   { border-left-color: #ff6b6b; }
+}
+
+.analyst-kpi-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #9ec3e6;
+    letter-spacing: 0.06em;
+}
+
+.analyst-kpi-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 4px;
+    word-break: break-word;
+}
+
+.analyst-kpi-sub {
+    font-size: 12px;
+    color: #cfe6ff;
+}
+
+// ── Insight banner ───────────────────────────────────────────────────────
+.analyst-insight {
+    background: linear-gradient(90deg, rgba(21,137,255,0.22) 0%, rgba(21,137,255,0.05) 100%);
+    border: 1px solid rgba(21,137,255,0.35);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 14px 0;
+}
+.analyst-insight-tag {
+    font-size: 11px;
+    color: #9ec3e6;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+}
+.analyst-insight-body {
+    font-size: 16px;
+    color: #fff;
+    margin-top: 4px;
+    line-height: 1.5;
+}
+
+// ── Jump cards ───────────────────────────────────────────────────────────
+.analyst-jump-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 10px;
+}
+.analyst-jump {
+    background: rgba(173, 216, 230, 0.12);
+    border-radius: 8px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 200ms ease;
+    border: 1px solid transparent;
+
+    &:hover {
+        background: rgba(21, 137, 255, 0.20);
+        border-color: rgba(21, 137, 255, 0.45);
+        transform: translateY(-2px);
+    }
+}
+.analyst-jump-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1589ff;
+}
+.analyst-jump-sub {
+    font-size: 12px;
+    color: #cfe6ff;
+    margin-top: 4px;
+}
+
+// ── Chart cards ──────────────────────────────────────────────────────────
+.analyst-chart-card {
+    background: rgba(173, 216, 230, 0.10);
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 14px;
+}
+
+.analyst-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+// ── Tables ───────────────────────────────────────────────────────────────
+.analyst-table {
+    background: rgba(173, 216, 230, 0.10) !important;
+    color: #fff !important;
+    box-shadow: none !important;
+
+    .MuiTableCell-root {
+        color: #fff !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+        font-size: 13px;
+    }
+    .MuiTableCell-head {
+        color: #9ec3e6 !important;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: 0.05em;
+    }
+
+    .analyst-row-self {
+        background: rgba(21, 137, 255, 0.18);
+    }
+}
+
+// ── DuPont decomposition cards ───────────────────────────────────────────
+.analyst-dupont-card {
+    background: rgba(173, 216, 230, 0.10);
+    border-radius: 8px;
+    padding: 14px;
+    border-left: 4px solid #1589ff;
+    display: flex;
+    flex-direction: column;
+
+    &.analyst-dupont-2step { border-left-color: #5cc6ff; }
+    &.analyst-dupont-3step { border-left-color: #f6c453; }
+}
+
+.analyst-dupont-head {
+    font-size: 11px;
+    font-weight: 700;
+    color: #9ec3e6;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+}
+
+.analyst-dupont-formula {
+    font-size: 13px;
+    color: #cfe6ff;
+    margin-bottom: 14px;
+    font-style: italic;
+}
+
+.analyst-dupont-chain {
+    display: flex;
+    align-items: stretch;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.analyst-dupont-node {
+    flex: 1 1 0;
+    min-width: 90px;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    padding: 10px 8px;
+    text-align: center;
+    border-top: 3px solid #5cc6ff;
+
+    &.tone-ok      { border-top-color: #4dd07b; }
+    &.tone-warn    { border-top-color: #f6c453; }
+    &.tone-bad     { border-top-color: #ff6b6b; }
+    &.tone-neutral { border-top-color: #5cc6ff; }
+
+    &.analyst-dupont-result {
+        background: rgba(21, 137, 255, 0.22);
+    }
+}
+
+.analyst-dupont-label {
+    font-size: 10px;
+    color: #9ec3e6;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+}
+
+.analyst-dupont-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 4px;
+    line-height: 1.1;
+}
+
+.analyst-dupont-sub {
+    font-size: 10px;
+    color: #cfe6ff;
+    margin-top: 4px;
+    opacity: 0.85;
+}
+
+.analyst-dupont-op {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    color: #1589ff;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+// ── SWOT ─────────────────────────────────────────────────────────────────
+.analyst-swot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.analyst-swot-quad {
+    background: rgba(173, 216, 230, 0.10);
+    border-radius: 8px;
+    padding: 14px;
+    border-top: 4px solid #1589ff;
+
+    &.swot-strength    { border-top-color: #4dd07b; }
+    &.swot-weakness    { border-top-color: #ff6b6b; }
+    &.swot-opportunity { border-top-color: #5cc6ff; }
+    &.swot-threat      { border-top-color: #f6c453; }
+}
+
+.analyst-swot-head {
+    font-size: 12px;
+    font-weight: 700;
+    color: #9ec3e6;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+}
+
+.analyst-swot-item {
+    background: rgba(0, 0, 0, 0.20);
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+}
+
+.analyst-swot-factor {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.analyst-swot-evidence {
+    font-size: 12px;
+    color: #cfe6ff;
+    margin-top: 4px;
+    line-height: 1.4;
+}
+.analyst-swot-action {
+    font-size: 12px;
+    color: #fff;
+    margin-top: 6px;
+    line-height: 1.4;
+}
+.analyst-swot-meta {
+    font-size: 10px;
+    color: #9ec3e6;
+    margin-top: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+// ── Impact pip (1-5) ─────────────────────────────────────────────────────
+.impact-pip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+
+    &.impact-1 { background: #4dd07b; }
+    &.impact-2 { background: #84d18a; }
+    &.impact-3 { background: #f6c453; }
+    &.impact-4 { background: #ff8c42; }
+    &.impact-5 { background: #ff6b6b; }
+}
+
+// ── Chips: moat / porter / trend / impact / risk ─────────────────────────
+.moat-chip {
+    color: #fff !important;
+    font-weight: 700 !important;
+
+    &.moat-strong   { background: #4dd07b !important; }
+    &.moat-moderate { background: #5cc6ff !important; }
+    &.moat-narrow   { background: #f6c453 !important; }
+    &.moat-none     { background: #ff6b6b !important; }
+}
+
+.porter-chip {
+    color: #fff !important;
+    font-weight: 700 !important;
+
+    &.porter-1 { background: #4dd07b !important; }
+    &.porter-2 { background: #84d18a !important; }
+    &.porter-3 { background: #f6c453 !important; }
+    &.porter-4 { background: #ff8c42 !important; }
+    &.porter-5 { background: #ff6b6b !important; }
+}
+
+.trend-chip {
+    color: #fff !important;
+    font-weight: 700 !important;
+
+    &.trend-accelerating { background: #ff8c42 !important; }
+    &.trend-stable       { background: #5cc6ff !important; }
+    &.trend-declining    { background: #f6c453 !important; }
+}
+
+.impact-chip {
+    color: #fff !important;
+    font-weight: 700 !important;
+
+    &.impact-positive { background: #4dd07b !important; }
+    &.impact-neutral  { background: #5cc6ff !important; }
+    &.impact-negative { background: #ff6b6b !important; }
+}
+
+.risk-source {
+    color: #fff !important;
+    font-weight: 700 !important;
+    font-size: 10px !important;
+
+    &.risk-weakness { background: #ff6b6b !important; }
+    &.risk-threat   { background: #f6c453 !important; color: #222 !important; }
+    &.risk-pestel   { background: #5cc6ff !important; }
+    &.risk-porter   { background: #ff8c42 !important; }
+}
+
+// Competitive status (output03/comparison_scorecard.csv)
+.status-chip {
+    color: #fff !important;
+    font-weight: 700 !important;
+
+    &.status-market-leader     { background: #4dd07b !important; }
+    &.status-strong-challenger { background: #5cc6ff !important; }
+    &.status-niche-specialist  { background: #f6c453 !important; color: #222 !important; }
+}
+
+.analyst-push-btn {
+    display: inline-block;
+    padding: 4px 10px;
+    background: rgba(21, 137, 255, 0.20);
+    border: 1px solid rgba(21, 137, 255, 0.45);
+    border-radius: 999px;
+    font-size: 11px;
+    color: #cfe6ff;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+// ── Responsive ───────────────────────────────────────────────────────────
+@media (max-width: 900px) {
+    .analyst-jump-grid { grid-template-columns: 1fr; }
+    .analyst-two-col { grid-template-columns: 1fr; }
+    .analyst-swot-grid { grid-template-columns: 1fr; }
+
+    .analyst-dupont-chain {
+        flex-direction: column;
+    }
+    .analyst-dupont-op {
+        justify-content: center;
+        padding: 2px 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .analyst-kpi-value { font-size: 18px; }
+}

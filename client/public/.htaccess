@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /true-visions-pms/
+
+# If the requested resource doesn't exist as a file or directory
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirect all requests to index.html for React Router to handle
+RewriteRule ^ index.html [QSA,L]

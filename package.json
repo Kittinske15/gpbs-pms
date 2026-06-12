@@ -1,0 +1,22 @@
+{
+  "name": "true-vision-warroom",
+  "version": "1.0.0",
+  "private": true,
+  "description": "True Vision Warroom - Full-stack project management application",
+  "main": "server/app.js",
+  "scripts": {
+    "install-all": "npm install && cd client && npm install && cd ../server && npm install",
+    "build": "cd client && npm run build",
+    "start": "cd server && npm start",
+    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm start\"",
+    "server": "cd server && npm start",
+    "client": "cd client && npm start"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "keywords": ["react", "express", "mysql", "full-stack"],
+  "author": "Your Name",
+  "license": "ISC"
+}

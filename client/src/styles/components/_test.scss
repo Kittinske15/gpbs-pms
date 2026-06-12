@@ -1,0 +1,33 @@
+.test {
+  height: 100vh;
+  padding: 20px;
+}
+
+.pie-chart-container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 20px;
+}
+
+.pie-chart {
+  width: 50%;
+}
+
+@media only screen and (min-width: 600px) {
+  .pie-chart {
+    width: 40%;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .pie-chart {
+    width: 30%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .pie-chart {
+    width: 20%;
+  }
+}

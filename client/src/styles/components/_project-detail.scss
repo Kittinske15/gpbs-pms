@@ -1,0 +1,520 @@
+.project_detail-body {
+    padding: 30px 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url(https://cpse.cpgroup.cn/base-service/default/20220429/43f5e8d90b5249c1aac7b5b26622407e.png?v=33902804);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.project-detail-title {
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.download-model {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.project-detail-title-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.subtract-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.download-model-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #FF1E39;
+    border-radius: 15px;
+    padding: 12px 15px;
+    cursor: pointer;
+}
+
+.ball-detial-processing {
+    width: 30px;
+    height: 30px;
+    border-radius: 150px;
+    background-color: yellow;
+    background-image: radial-gradient(circle 40px at 0 0, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, .8)), radial-gradient(circle 180px at 90px 80px, rgba(255, 255, 255, .7), rgba(0, 0, 0, 0));
+    background-repeat: no-repeat, no-repeat;
+
+    position: relative;
+}
+
+.ball-detial-processing:after {
+    content: "";
+    z-index: -1;
+    top: 220px;
+    left: 150px;
+    position: absolute;
+    background-color: black;
+    border-radius: 280px 60px;
+    width: 150px;
+    height: 80px;
+    box-shadow: 1px 0 1px black;
+    opacity: .8;
+}
+
+.project-owner-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.project-owner-box,
+.project-description-box {
+    padding: 30px 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url(https://cpse.cpgroup.cn/base-service/default/20220429/43f5e8d90b5249c1aac7b5b26622407e.png?v=33902804);
+    min-width: 0; // Allow grid items to shrink below content size
+    overflow: hidden; // Prevent content overflow from expanding the box
+}
+
+.project-owner-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.project-owner-title,
+.project-owner-name {
+    font-weight: bold;
+    color: white;
+    font-size: 18px;
+}
+
+.project-owner-detail-box {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+
+    background: #F3F1FF;
+    border: 3px solid #000E6D;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.project-description,
+.project-objective {
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 8px 16px;
+    width: fit-content;
+    font-weight: bold;
+    font-size: 16px;
+    color: #5533FF;
+    margin-bottom: 10px;
+}
+
+.project-description-detail,
+.project-objective-detail {
+    font-weight: 600;
+    font-size: 16px;
+    color: #464F60;
+}
+
+.project-update-time,
+.project-create-time {
+    font-weight: 600;
+    font-size: 14px;
+    color: white;
+}
+
+.project-owner-box-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.project-create-time {
+    margin-bottom: 6px;
+}
+
+.project-description-menu {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.project-description-menuitem {
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: #dee1fa;
+    color: black;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    border: 3px solid #000E6D;
+    cursor: pointer;
+}
+
+.project-description-detail-box {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+    height: fit-content;
+
+    background: #F3F1FF;
+    border: 3px solid #000E6D;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.roi-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.roi-menu-flex {
+    display: flex;
+    align-items: center;
+}
+
+.project-roi-detail {
+    background: #e1e3e1;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #464F60;
+    width: 80%;
+}
+
+.project-roi-title {
+    text-align: center;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 8px 16px;
+    width: 100px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #5533FF;
+}
+
+.project-attachment-title {
+    text-align: center;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 12px 16px;
+    width: 100px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #5533FF;
+}
+
+.roi-menu-flex {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 10px;
+}
+
+.insert-note-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.insert-note {
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+    color: black;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    background: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.insert-img {
+    width: 16px;
+    height: 16px;
+}
+
+.detail-box {
+    border-radius: 5px;
+    background: rgba(173, 216, 230, 0.2);
+    color: white;
+    padding: 20px 15px;
+}
+
+@media screen and (min-width: 2000px) {
+
+    .project-description,
+    .project-objective,
+    .project-detail-title,
+    .project-owner-title,
+    .create-btn-project,
+    .prioritization-body-title,
+    .project-title,
+    .create-project-btn {
+        font-size: 28px !important;
+    }
+
+    .project-description-detail,
+    .project-objective-detail,
+    .project-owner-name,
+    .project-description-menuitem,
+    .download-model,
+    .menu-item,
+    .item,
+    .add-project-team,
+    .project-button {
+        font-size: 24px !important;
+    }
+
+    .project-team-rules {
+        font-size: 18px !important;
+    }
+
+    .detail-box table thead th {
+        font-size: 24px;
+    }
+
+    .detail-box table tbody tr td {
+        font-size: 24px;
+    }
+
+    .project-owner-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .subtract-icon,
+    .ball-detial-processing,
+    .menu-img,
+    .icon svg,
+    .add-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .project-create-time,
+    .project-update-time {
+        font-size: 18px;
+    }
+
+    .project-table table thead tr th{
+        font-size: 24px !important;
+    }
+
+    .project-table tbody tr td{
+        font-size: 24px !important;
+    }
+}
+
+// Mobile responsive styles
+@media screen and (max-width: 768px) {
+  .project_detail-body {
+    padding: 15px 10px;
+  }
+
+  .project-detail-title-flex {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .project-detail-title {
+    font-size: 16px;
+  }
+
+  .download-model-box {
+    padding: 8px 12px;
+  }
+
+  .download-model {
+    font-size: 10px;
+  }
+
+  .subtract-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .ball-detial-processing {
+    width: 24px;
+    height: 24px;
+  }
+
+  .project-owner-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .project-owner-box,
+  .project-description-box {
+    padding: 15px 10px;
+  }
+
+  .project-owner-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .project-owner-title,
+  .project-owner-name {
+    font-size: 14px;
+  }
+
+  .project-owner-detail-box {
+    padding: 15px;
+  }
+
+  .project-description,
+  .project-objective {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .project-description-detail,
+  .project-objective-detail {
+    font-size: 11px;
+  }
+
+  .project-update-time,
+  .project-create-time {
+    font-size: 8px;
+  }
+
+  .project-description-menu {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .project-description-menuitem {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .project-description-detail-box {
+    padding: 15px;
+  }
+
+  .project-roi-title,
+  .project-attachment-title {
+    font-size: 12px;
+    width: 80px;
+    padding: 6px 10px;
+  }
+
+  .project-roi-detail {
+    font-size: 11px;
+    padding: 8px 12px;
+  }
+
+  .roi-menu-flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .detail-box {
+    padding: 15px 10px;
+
+    table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+
+      th, td {
+        font-size: 11px !important;
+        padding: 6px 8px !important;
+      }
+    }
+  }
+
+  .insert-note {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .insert-img {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .project-detail-title {
+    font-size: 14px;
+  }
+
+  .download-model-box {
+    padding: 6px 10px;
+  }
+
+  .download-model {
+    font-size: 9px;
+  }
+
+  .ball-detial-processing {
+    width: 20px;
+    height: 20px;
+  }
+
+  .project-owner-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .project-owner-title,
+  .project-owner-name {
+    font-size: 12px;
+  }
+
+  .project-description,
+  .project-objective {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .project-description-detail,
+  .project-objective-detail {
+    font-size: 10px;
+  }
+
+  .project-description-menuitem {
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+
+  .project-roi-title,
+  .project-attachment-title {
+    font-size: 10px;
+    width: 70px;
+  }
+
+  .project-roi-detail {
+    font-size: 10px;
+    width: 100%;
+  }
+}
