@@ -39,12 +39,10 @@ export default function EditProject() {
     const [roiActual, setRoiActual] = useState('');
     const [budgetActual, setBudgetActual] = useState('');
 
-    // Beneficiary options for Indirect Return
+    // Beneficiary options for Indirect Return (demo)
     const beneficiaryOptions = [
-        'CP Group', 'CPF', 'CP All', 'CP Plant', 'CP Engineering', 'CPLI',
-        'CP Freshmart', 'CP Goods', 'CP China', 'CP Medical Center', 'CT Bright',
-        'True Visions Group', 'True Group', 'Zhengyuan', 'DT Group', 'MQDC',
-        'Super Brand Mall', 'China Retail', 'Tesco'
+        'GPBS', 'Internal', 'Client A', 'Client B', 'Client C',
+        'Partner', 'Subsidiary', 'External'
     ];
 
     // ROI Description options for Indirect Return

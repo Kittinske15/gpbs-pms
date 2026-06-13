@@ -4,7 +4,7 @@
     border-radius: 10px;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    background-image: url(https://cpse.cpgroup.cn/base-service/default/20220429/43f5e8d90b5249c1aac7b5b26622407e.png?v=33902804);
+    background: linear-gradient(135deg, #1565C0 0%, #00A859 100%);
     width: 100%;
     box-sizing: border-box;
 }
@@ -85,7 +85,7 @@
     border-radius: 10px;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    background-image: url(https://cpse.cpgroup.cn/base-service/default/20220429/43f5e8d90b5249c1aac7b5b26622407e.png?v=33902804);
+    background: linear-gradient(135deg, #1565C0 0%, #00A859 100%);
     min-width: 0; // Allow grid items to shrink below content size
     overflow: hidden; // Prevent content overflow from expanding the box
 }

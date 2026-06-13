@@ -9,7 +9,7 @@
 /coverage
 
 # production
-/build
+# /build  ← intentionally tracked so server can git pull the latest build
 
 # misc
 .DS_Store

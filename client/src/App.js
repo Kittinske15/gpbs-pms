@@ -4,7 +4,7 @@ import Home from './pages/Home';
 function App() {
   return (
     <div className="App">
-      <h1>TRUE VISION WARROOM</h1>
+      <h1>GPBS PMS</h1>
     </div>
   );
 }

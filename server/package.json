@@ -1,7 +1,7 @@
 {
-  "name": "true-vision-warroom-server",
+  "name": "gpbs-pms-server",
   "version": "1.0.0",
-  "description": "Express server for True Vision Warroom",
+  "description": "Express server for GPBS PMS",
   "main": "app.js",
   "dependencies": {
     "bcrypt": "^6.0.0",

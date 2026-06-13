@@ -12,7 +12,7 @@ yarn-error.log*
 .env.production.local
 
 # Build outputs
-/client/build
+# /client/build  ← intentionally tracked so server can git pull the latest build
 /server/dist
 
 # IDE files

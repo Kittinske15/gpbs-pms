@@ -152,7 +152,7 @@ export default function Sidebar({ onToggle }) {
                                     <motion.h3
                                         animate={{ opacity: open ? 1 : 0, height: open ? "auto" : 0 }}
                                     >
-                                        TRUE VISIONS WAR ROOM
+                                        GPBS PMS
                                     </motion.h3>
                                 </Link>
                                 <Link className='nav-item' to="/home">
@@ -195,7 +195,7 @@ export default function Sidebar({ onToggle }) {
                                 BALANCED SCORECARD
                             </motion.h3>
                             <a className='nav-item' target="_blank" href={`http://ibsdo.com:3303?token=${localStorage.getItem('token')}`}>
-                                <Item icon={<TravelExploreIcon />} name="iCentral War Room" />
+                                <Item icon={<TravelExploreIcon />} name="iCentral PMS" />
                             </a>
                             <a className='nav-item' style={{ pointerEvents: 'none', opacity: 0.5 }}>
                                 <Item icon={<AutoGraphIcon />} name="Forecasting" />

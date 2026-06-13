@@ -24,7 +24,7 @@ const transporter = nodemailer.createTransport({
         pass: process.env.SMTP_PASS || 'your-app-password'
     }
 });
-const ADMIN_RESET_KEY = process.env.ADMIN_RESET_KEY || 'cpgroup2024admin'; // Use env variable
+const ADMIN_RESET_KEY = process.env.ADMIN_RESET_KEY || 'gpbs2026admin'; // Use env variable
 const PORT = process.env.PORT || 5001
 
 // Token blacklist for server-side logout (Policy 5.2.3.6)
@@ -112,7 +112,7 @@ const pool = mysql.createPool({
     host: process.env.DB_HOST || 'localhost',
     user: process.env.DB_USER || 'ibsdo',
     password: process.env.DB_PASSWORD || '#wyT6G5iQg36',
-    database: process.env.DB_NAME || 'tvs_db_dup',
+    database: process.env.DB_NAME || 'gpbs_db',
     port: process.env.DB_PORT || 3306,
     waitForConnections: true,
     connectionLimit: 10,
@@ -877,13 +877,13 @@ app.post('/forgot-password', jsonParser, function (req, res) {
             // Send OTP email
             if (user.c_email) {
                 const mailOptions = {
-                    from: process.env.SMTP_FROM || '"True Vision War Room" <noreply@truevisions.co.th>',
+                    from: process.env.SMTP_FROM || '"GPBS PMS" <noreply@example.com>',
                     to: user.c_email,
-                    subject: 'Your OTP Code - True Vision War Room Password Reset',
+                    subject: 'Your OTP Code - GPBS PMS Password Reset',
                     html: `
                         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-                            <div style="background-color: #ed1b22; padding: 20px; text-align: center;">
-                                <h1 style="color: white; margin: 0;">True Vision War Room</h1>
+                            <div style="background-color: #1565C0; padding: 20px; text-align: center;">
+                                <h1 style="color: white; margin: 0;">GPBS PMS</h1>
                             </div>
                             <div style="padding: 30px; background-color: #f9f9f9;">
                                 <h2 style="color: #333;">Password Reset OTP</h2>
@@ -893,7 +893,7 @@ app.post('/forgot-password', jsonParser, function (req, res) {
                                 <p style="color: #666; line-height: 1.6;">
                                     You have requested to reset your password. Use the following OTP code:
                                 </p>
-                                <div style="background-color: #ed1b22; padding: 20px; text-align: center; margin: 20px 0; border-radius: 8px;">
+                                <div style="background-color: #1565C0; padding: 20px; text-align: center; margin: 20px 0; border-radius: 8px;">
                                     <span style="color: white; font-size: 32px; font-weight: bold; letter-spacing: 8px;">${otp}</span>
                                 </div>
                                 <p style="color: #666; line-height: 1.6;">
@@ -906,7 +906,7 @@ app.post('/forgot-password', jsonParser, function (req, res) {
                             </div>
                             <div style="background-color: #333; padding: 15px; text-align: center;">
                                 <p style="color: #999; margin: 0; font-size: 12px;">
-                                    This is an automated message from True Vision War Room. Please do not reply to this email.
+                                    This is an automated message from GPBS PMS. Please do not reply to this email.
                                 </p>
                             </div>
                         </div>
@@ -1153,18 +1153,18 @@ app.post('/resend-otp', jsonParser, function (req, res) {
                     // Send email
                     if (user.c_email) {
                         const mailOptions = {
-                            from: process.env.SMTP_FROM || '"True Vision War Room" <noreply@truevisions.co.th>',
+                            from: process.env.SMTP_FROM || '"GPBS PMS" <noreply@example.com>',
                             to: user.c_email,
-                            subject: 'Your New OTP Code - True Vision War Room Password Reset',
+                            subject: 'Your New OTP Code - GPBS PMS Password Reset',
                             html: `
                                 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-                                    <div style="background-color: #ed1b22; padding: 20px; text-align: center;">
-                                        <h1 style="color: white; margin: 0;">True Vision War Room</h1>
+                                    <div style="background-color: #1565C0; padding: 20px; text-align: center;">
+                                        <h1 style="color: white; margin: 0;">GPBS PMS</h1>
                                     </div>
                                     <div style="padding: 30px; background-color: #f9f9f9;">
                                         <h2 style="color: #333;">New OTP Code</h2>
                                         <p style="color: #666;">Here is your new OTP code:</p>
-                                        <div style="background-color: #ed1b22; padding: 20px; text-align: center; margin: 20px 0; border-radius: 8px;">
+                                        <div style="background-color: #1565C0; padding: 20px; text-align: center; margin: 20px 0; border-radius: 8px;">
                                             <span style="color: white; font-size: 32px; font-weight: bold; letter-spacing: 8px;">${otp}</span>
                                         </div>
                                         <p style="color: #666;">This code will expire in <strong>10 minutes</strong>.</p>
@@ -1223,7 +1223,7 @@ app.post('/admin-fix-default-passwords', jsonParser, async function (req, res) {
     }
 
     try {
-        const correctHash = await hashPasswordSecure('TrueVision123!');
+        const correctHash = await hashPasswordSecure('Gpbs2026!');
 
         connection.query(
             'UPDATE cwr038_member SET c_password = ?, c_failed_attempts = 0, c_lockout_until = NULL WHERE c_must_change_password = 1',
@@ -1234,7 +1234,7 @@ app.post('/admin-fix-default-passwords', jsonParser, async function (req, res) {
                     return res.json({ status: 'error', message: 'Failed to fix passwords' });
                 }
                 console.log(`Fixed default passwords for ${result.affectedRows} users`);
-                res.json({ status: 'ok', message: `${result.affectedRows} user(s) fixed with correct default password (TrueVision123!) and accounts unlocked.` });
+                res.json({ status: 'ok', message: `${result.affectedRows} user(s) fixed with correct default password (Gpbs2026!) and accounts unlocked.` });
             }
         );
     } catch (err) {

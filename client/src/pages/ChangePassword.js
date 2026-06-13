@@ -99,14 +99,14 @@ export default function ChangePassword() {
             <div className="security-warning-banner">
                 <LockIcon style={{ fontSize: '14px', marginRight: '5px' }} />
                 <span>
-                    This system is the property of CP Group. Unauthorized access is strictly prohibited.
+                    This system is the property of GPBS. Unauthorized access is strictly prohibited.
                 </span>
             </div>
 
             <div className="container" id="container" style={{ maxWidth: '450px', minHeight: 'auto' }}>
                 <div style={{ padding: '40px', width: '100%', boxSizing: 'border-box' }}>
                     <form onSubmit={handleSubmit} style={{ height: 'auto' }}>
-                        <LockIcon style={{ fontSize: '48px', color: '#ed1b22', marginBottom: '10px' }} />
+                        <LockIcon style={{ fontSize: '48px', color: '#1565C0', marginBottom: '10px' }} />
                         <h1 style={{ fontWeight: 'bold', marginBottom: '10px', fontSize: '24px' }}>Change Password</h1>
                         <p style={{ fontSize: '13px', color: '#666', marginBottom: '20px' }}>
                             {isFirstTimeLogin

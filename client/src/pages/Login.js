@@ -77,7 +77,7 @@ export default function Login() {
             <div className="security-warning-banner">
                 <LockIcon style={{ fontSize: '14px', marginRight: '5px' }} />
                 <span>
-                    This system is the property of CP Group. Unauthorized access is strictly prohibited.
+                    This system is the property of GPBS. Unauthorized access is strictly prohibited.
                     All activities are monitored and logged for security purposes.
                 </span>
             </div>

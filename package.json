@@ -1,8 +1,8 @@
 {
-  "name": "true-vision-warroom",
+  "name": "gpbs-pms",
   "version": "1.0.0",
   "private": true,
-  "description": "True Vision Warroom - Full-stack project management application",
+  "description": "GPBS PMS - Full-stack project management application (demo)",
   "main": "server/app.js",
   "scripts": {
     "install-all": "npm install && cd client && npm install && cd ../server && npm install",

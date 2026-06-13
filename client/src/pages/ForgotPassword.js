@@ -230,7 +230,7 @@ export default function ForgotPassword() {
             <div className="security-warning-banner">
                 <LockIcon style={{ fontSize: '14px', marginRight: '5px' }} />
                 <span>
-                    This system is the property of CP Group. Unauthorized access is strictly prohibited.
+                    This system is the property of GPBS. Unauthorized access is strictly prohibited.
                 </span>
             </div>
 
@@ -240,7 +240,7 @@ export default function ForgotPassword() {
                     {/* Step 1: Enter Username/Email */}
                     {step === 1 && (
                         <form onSubmit={handleRequestOtp} style={{ height: 'auto' }}>
-                            <EmailIcon style={{ fontSize: '48px', color: '#ed1b22', marginBottom: '10px' }} />
+                            <EmailIcon style={{ fontSize: '48px', color: '#1565C0', marginBottom: '10px' }} />
                             <h1 style={{ fontWeight: 'bold', marginBottom: '10px', fontSize: '24px' }}>Forgot Password</h1>
                             <p style={{ fontSize: '13px', color: '#666', marginBottom: '20px' }}>
                                 Enter your username or email address and we will send you an OTP code.
@@ -310,7 +310,7 @@ export default function ForgotPassword() {
                     {/* Step 2: Enter OTP */}
                     {step === 2 && (
                         <form onSubmit={handleVerifyOtp} style={{ height: 'auto' }}>
-                            <LockIcon style={{ fontSize: '48px', color: '#ed1b22', marginBottom: '10px' }} />
+                            <LockIcon style={{ fontSize: '48px', color: '#1565C0', marginBottom: '10px' }} />
                             <h1 style={{ fontWeight: 'bold', marginBottom: '10px', fontSize: '24px' }}>Enter OTP</h1>
                             <p style={{ fontSize: '13px', color: '#666', marginBottom: '20px' }}>
                                 {maskedEmail ? (
@@ -368,7 +368,7 @@ export default function ForgotPassword() {
                                             borderRadius: '8px',
                                             outline: 'none'
                                         }}
-                                        onFocus={(e) => e.target.style.borderColor = '#ed1b22'}
+                                        onFocus={(e) => e.target.style.borderColor = '#1565C0'}
                                         onBlur={(e) => e.target.style.borderColor = '#ddd'}
                                     />
                                 ))}
@@ -381,7 +381,7 @@ export default function ForgotPassword() {
                                 ) : (
                                     <span
                                         onClick={handleResendOtp}
-                                        style={{ color: '#ed1b22', cursor: 'pointer', fontWeight: 'bold' }}
+                                        style={{ color: '#1565C0', cursor: 'pointer', fontWeight: 'bold' }}
                                     >
                                         Resend OTP
                                     </span>
@@ -424,7 +424,7 @@ export default function ForgotPassword() {
                     {/* Step 3: Set New Password */}
                     {step === 3 && (
                         <form onSubmit={handleResetPassword} style={{ height: 'auto' }}>
-                            <LockIcon style={{ fontSize: '48px', color: '#ed1b22', marginBottom: '10px' }} />
+                            <LockIcon style={{ fontSize: '48px', color: '#1565C0', marginBottom: '10px' }} />
                             <h1 style={{ fontWeight: 'bold', marginBottom: '10px', fontSize: '24px' }}>Set New Password</h1>
                             <p style={{ fontSize: '13px', color: '#666', marginBottom: '20px' }}>
                                 Create a strong password with at least 8 characters.

@@ -9,7 +9,7 @@ const getApiBaseUrl = () => {
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
         return 'http://localhost:5001';
     }
-    return 'http://ibsdo.com:5001';
+    return 'https://ibsdo.com/gpbs-api';
 };
 const API_BASE_URL = getApiBaseUrl();
 
@@ -41,7 +41,7 @@ export const logout = async (reason = '') => {
     localStorage.removeItem('mustChangePassword');
 
     // Redirect to external login page
-    window.location.href = 'https://ibsdo.com/true-visions-pms/';
+    window.location.href = 'https://ibsdo.com/gpbs-pms/';
 };
 
 export const isAuthenticated = () => {

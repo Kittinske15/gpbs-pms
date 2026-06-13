@@ -13,7 +13,7 @@ const getApiBaseUrl = () => {
   }
 
   // Default fallback for ibsdo.com - use HTTPS reverse proxy
-  return 'https://ibsdo.com/true-visions-api';
+  return 'https://ibsdo.com/gpbs-api';
 };
 
 export const API_BASE_URL = getApiBaseUrl();
@@ -34,7 +34,7 @@ const handleUnauthorized = (response) => {
     localStorage.removeItem('user');
     localStorage.removeItem('sessionTimeout');
     localStorage.removeItem('lastActivity');
-    window.location.href = 'https://ibsdo.com/true-visions-pms/';
+    window.location.href = 'https://ibsdo.com/gpbs-pms/';
     return true;
   }
   return false;

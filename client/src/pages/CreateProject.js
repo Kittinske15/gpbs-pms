@@ -32,12 +32,10 @@ export default function CreateProject() {
     const [beneficiary, setBeneficiary] = useState('');
     const [roiDescription, setRoiDescription] = useState('');
 
-    // Beneficiary options
+    // Beneficiary options (demo)
     const beneficiaryOptions = [
-        'CP Group', 'CPF', 'CP All', 'CP Plant', 'CP Engineering', 'CPLI',
-        'CP Freshmart', 'CP Goods', 'CP China', 'CP Medical Center', 'CT Bright',
-        'True Visions Group', 'True Group', 'Zhengyuan', 'DT Group', 'MQDC',
-        'Super Brand Mall', 'China Retail', 'Tesco', 'Lotus Super Center', 'Makro', 'etc'
+        'GPBS', 'Internal', 'Client A', 'Client B', 'Client C',
+        'Partner', 'Subsidiary', 'External', 'etc'
     ];
 
     // ROI Description options
