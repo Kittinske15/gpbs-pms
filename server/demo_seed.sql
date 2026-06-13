@@ -138,18 +138,19 @@ INSERT IGNORE INTO cwr038_project_revenue_projection (c_project_id, c_year, c_re
 
 
 -- ---------- 5. A couple of action plans (sample) ----------
+-- status uses color names: Green = done, Yellow = in progress, Red = blocked
 INSERT IGNORE INTO cwr038_action_plans
-    (c_project_id, c_action, c_responsible_id, c_due_date, c_status, c_create_by, c_create_date)
+    (project_id, plan_description, responsible_emp_id, start_date, end_date, status)
 VALUES
-    (1001, 'Finalise UI mockups in Figma',      2, '2026-02-28', 'completed',  1, NOW()),
-    (1001, 'Implement authentication flow',     2, '2026-04-15', 'completed',  1, NOW()),
-    (1001, 'Integrate billing API',             3, '2026-06-30', 'completed',  1, NOW()),
-    (1002, 'Pick KB platform (Notion vs Confluence)', 4, '2026-03-15', 'completed',  2, NOW()),
-    (1002, 'Migrate engineering docs',          4, '2026-05-30', 'in_progress', 2, NOW()),
-    (1003, 'Native iOS prototype',              5, '2026-07-30', 'in_progress', 3, NOW()),
-    (1004, 'Schema mapping legacy -> BQ',       7, '2026-04-15', 'in_progress', 4, NOW()),
-    (1005, 'Configure top-30 customer segments', 1, '2026-06-30', 'completed',  5, NOW()),
-    (1008, 'Vendor evaluation matrix',          3, '2026-07-15', 'pending',     7, NOW());
+    (1001, 'Finalise UI mockups in Figma',              2, '2026-01-20', '2026-02-28', 'Green'),
+    (1001, 'Implement authentication flow',             2, '2026-03-01', '2026-04-15', 'Green'),
+    (1001, 'Integrate billing API',                     3, '2026-05-01', '2026-06-30', 'Green'),
+    (1002, 'Pick KB platform (Notion vs Confluence)',   4, '2026-02-05', '2026-03-15', 'Green'),
+    (1002, 'Migrate engineering docs',                  4, '2026-04-01', '2026-05-30', 'Yellow'),
+    (1003, 'Native iOS prototype',                      5, '2026-04-15', '2026-07-30', 'Yellow'),
+    (1004, 'Schema mapping legacy -> BQ',               7, '2026-02-01', '2026-04-15', 'Yellow'),
+    (1005, 'Configure top-30 customer segments',        1, '2026-04-10', '2026-06-30', 'Green'),
+    (1008, 'Vendor evaluation matrix',                  3, '2026-06-15', '2026-07-15', 'Yellow');
 
 
 -- ============================================================
