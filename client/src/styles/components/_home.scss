@@ -19,10 +19,11 @@
 }
 
 .card {
-  border-radius: 5px;
-  background: rgba(173, 216, 230, 0.2);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   height: 120px;
-  color: white;
+  color: #333;
   padding: 20px 15px;
 }
 
@@ -30,12 +31,14 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  border-radius: 5px;
-  background: rgba(173, 216, 230, 0.2);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   padding: 20px 15px;
   width: 100%;
   box-sizing: border-box;
   margin-bottom: 20px;
+  color: #333;
 }
 
 .gauge-subtitle-grid {
@@ -49,7 +52,7 @@
   left: 95px;
   font-size: 18px;
   font-weight: bold;
-  color: #fff;
+  color: #333;
 }
 
 .gauge-subtitle-flex {
@@ -61,12 +64,14 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  border-radius: 5px;
-  background: rgba(173, 216, 230, 0.2);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   padding: 20px 15px;
   width: 100%;
   box-sizing: border-box;
   margin-bottom: 20px;
+  color: #333;
 }
 
 .project_by_project-title {
