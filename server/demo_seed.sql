@@ -153,8 +153,59 @@ VALUES
     (1008, 'Vendor evaluation matrix',                  3, '2026-06-15', '2026-07-15', 'Yellow');
 
 
+-- ---------- 6. Actuals + progress for the demo projects ----------
+-- The dashboard reads:
+--   c_budget_act       -> YTD Investment (ACT)
+--   c_roi_act          -> YTD Return (ACT)  (counted when c_roi_year = selected year)
+--   c_percent_progress -> "average of percent progress" gauge
+-- The INSERT IGNORE above does not set these, so we backfill them here.
+-- Running these UPDATEs is safe and idempotent.
+
+UPDATE cwr038_project SET c_percent_progress=100, c_budget_act=2420000, c_roi_act=5200000, c_roi_year=2026 WHERE id=1001;
+UPDATE cwr038_project SET c_percent_progress=65,  c_budget_act=290000,  c_roi_act=520000,  c_roi_year=2026 WHERE id=1002;
+UPDATE cwr038_project SET c_percent_progress=48,  c_budget_act=1850000, c_roi_act=8200000, c_roi_year=2026 WHERE id=1003;
+UPDATE cwr038_project SET c_percent_progress=40,  c_budget_act=980000,  c_roi_act=1480000, c_roi_year=2026 WHERE id=1004;
+UPDATE cwr038_project SET c_percent_progress=100, c_budget_act=805000,  c_roi_act=2350000, c_roi_year=2026 WHERE id=1005;
+UPDATE cwr038_project SET c_percent_progress=58,  c_budget_act=410000,  c_roi_act=720000,  c_roi_year=2026 WHERE id=1006;
+UPDATE cwr038_project SET c_percent_progress=30,  c_budget_act=180000,  c_roi_act=350000,  c_roi_year=2026 WHERE id=1007;
+UPDATE cwr038_project SET c_percent_progress=22,  c_budget_act=220000,  c_roi_act=1100000, c_roi_year=2026 WHERE id=1008;
+UPDATE cwr038_project SET c_percent_progress=100, c_budget_act=268000,  c_roi_act=640000,  c_roi_year=2026 WHERE id=1009;
+UPDATE cwr038_project SET c_percent_progress=18,  c_budget_act=95000,   c_roi_act=240000,  c_roi_year=2026 WHERE id=1010;
+
+
+-- ---------- 7. Backfill ANY other projects already in the DB ----------
+-- This removes "0.00 MB" actuals / "0%" progress for projects that existed
+-- before this seed (e.g. earlier demo rows). It only fills values that are
+-- currently NULL or 0, so it never overwrites real data you've entered.
+
+UPDATE cwr038_project
+SET
+    c_budget_act = CASE
+        WHEN (c_budget_act IS NULL OR c_budget_act = 0)
+        THEN GREATEST(ROUND(COALESCE(c_budget, 1000000) * 0.8), 50000)
+        ELSE c_budget_act END,
+    c_roi_year = COALESCE(NULLIF(c_roi_year, 0), 2026),
+    c_roi_act = CASE
+        WHEN (c_roi_act IS NULL OR c_roi_act = 0)
+        THEN GREATEST(ROUND(COALESCE(NULLIF(c_roi_tgt, 0), COALESCE(c_budget, 1000000) * 1.5) * 0.85), 100000)
+        ELSE c_roi_act END,
+    c_roi_tgt = CASE
+        WHEN (c_roi_tgt IS NULL OR c_roi_tgt = 0)
+        THEN GREATEST(ROUND(COALESCE(c_budget, 1000000) * 1.6), 150000)
+        ELSE c_roi_tgt END,
+    c_percent_progress = CASE
+        WHEN c_percent_progress IS NOT NULL AND c_percent_progress > 0 THEN c_percent_progress
+        WHEN LOWER(c_project_status) = 'green'  THEN 100
+        WHEN LOWER(c_project_status) = 'yellow' THEN 60
+        WHEN LOWER(c_project_status) = 'orange' THEN 42
+        WHEN LOWER(c_project_status) = 'red'    THEN 28
+        ELSE 16 END
+WHERE id NOT IN (1001,1002,1003,1004,1005,1006,1007,1008,1009,1010);
+
+
 -- ============================================================
 --  Done. Refresh https://ibsdo.com/gpbs-pms/ — the dashboard
---  should now show: 10 projects, mixed statuses, member counts,
---  and ROI numbers in the gauges.
+--  should now show: projects with mixed statuses, member counts,
+--  non-zero YTD Investment/Return actuals, and a healthy average
+--  progress gauge (no more 0.00 MB / 0%).
 -- ============================================================

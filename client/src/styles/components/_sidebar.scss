@@ -33,7 +33,11 @@ input, textarea, select, [contenteditable="true"] {
   //   rgb(22, 19, 43) 11.4%,
   //   rgb(34, 56, 78) 70.2%
   // );
-  background: linear-gradient(135deg, #0d2540 0%, #0a3d2f 100%);
+  // Navy palette to match the GPBS Portal / BSC sites (was a green-tinted
+  // gradient #0a3d2f). Radial highlight + deep navy base.
+  background:
+    radial-gradient(1100px 520px at 78% -8%, #16518f 0%, rgba(22, 81, 143, 0) 58%),
+    linear-gradient(135deg, #0e2a4d 0%, #071a33 100%);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
