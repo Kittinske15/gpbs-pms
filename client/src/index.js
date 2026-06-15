@@ -12,6 +12,7 @@ import Prioritization from './pages/Prioritization.js';
 import DynamicProjectDetail from './pages/DynamicProjectDetail.js';
 import SmallGroup from './pages/SmallGroup.js';
 import Login from './pages/Login.js';
+import AutoLogin from './pages/AutoLogin.js';
 import ChangePassword from './pages/ChangePassword.js';
 import ForgotPassword from './pages/ForgotPassword.js';
 import MyProject from './pages/MyProject.js';
@@ -28,7 +29,10 @@ root.render(
     <ScrollToTop />
     <Routes>
       {/* Public routes */}
-      <Route path="/" element={<Login />} />
+      {/* Demo: "/" auto-logs in and lands on the dashboard. The real login
+          page is still available at /login. */}
+      <Route path="/" element={<AutoLogin />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/change-password" element={<ChangePassword />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
 
