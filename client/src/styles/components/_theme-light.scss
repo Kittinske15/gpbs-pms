@@ -1,0 +1,113 @@
+// ===========================================================================
+// GPBS PMS — LIGHT THEME
+// ===========================================================================
+// Imported LAST in _components-dir.scss so it overrides the original dark
+// styles. To revert to the dark theme, just remove its @import line there.
+//
+// Palette is aligned with the light GPBS sites (Insightra / Survey / Biz Scan):
+//   page  #eef3f9    card #ffffff    border #e3e9f2
+//   text  #243044    dim  #5b6b88    accent #1670c9
+// ===========================================================================
+
+$lt-page: #eef3f9;
+$lt-card: #ffffff;
+$lt-border: #e3e9f2;
+$lt-text: #243044;
+$lt-dim: #5b6b88;
+$lt-accent: #1670c9;
+$lt-shadow: 0 4px 16px rgba(20, 40, 80, 0.07);
+
+// ---- App shell ------------------------------------------------------------
+.App {
+  background: linear-gradient(180deg, #eef3f9 0%, #e6edf6 100%) !important;
+  color: $lt-text;
+}
+
+.body_container {
+  background: transparent !important;
+}
+
+.header_container {
+  background: $lt-card !important;
+  border: 1px solid $lt-border;
+  box-shadow: $lt-shadow;
+}
+
+// ---- Sidebar --------------------------------------------------------------
+.sidebar {
+  background: $lt-card !important;
+  color: $lt-text !important;
+  border: 1px solid $lt-border;
+  box-shadow: $lt-shadow;
+}
+.sidebar h3 {
+  color: $lt-dim !important;
+}
+.nav-item {
+  color: $lt-text !important;
+}
+.nav-item:hover {
+  color: $lt-accent !important;
+}
+.item:hover {
+  background: rgba(22, 112, 201, 0.08);
+}
+.lines_icon {
+  color: $lt-dim;
+}
+.scroll-container {
+  scrollbar-color: rgba(20, 40, 80, 0.25) transparent;
+  &::-webkit-scrollbar-thumb {
+    background: rgba(20, 40, 80, 0.25);
+    &:hover { background: rgba(20, 40, 80, 0.4); }
+  }
+}
+
+// ---- Cards / gauges / panels ---------------------------------------------
+.card,
+.gauge,
+.project_by_project {
+  background: $lt-card !important;
+  color: $lt-text !important;
+  border: 1px solid $lt-border;
+  box-shadow: $lt-shadow;
+}
+
+.body-title { color: $lt-text !important; }
+.card-subtitle,
+.gauge-subtitle { color: $lt-text !important; }
+
+// Section titles stay blue (works on white) — nudge to a slightly deeper blue.
+.card-title,
+.gauge-title,
+.project_by_project-title { color: $lt-accent !important; }
+
+// ---- MUI tables / inputs / pagination ------------------------------------
+// Note: the colored status cells set their own background + dark text in JS,
+// so we only theme the container + neutral cells here.
+.MuiPaper-root,
+.MuiTableContainer-root,
+.MuiTable-root {
+  background-color: $lt-card !important;
+  color: $lt-text !important;
+}
+.MuiTablePagination-root,
+.MuiTablePagination-root * {
+  color: $lt-text !important;
+}
+.MuiInputBase-input,
+.MuiSelect-select {
+  color: $lt-text !important;
+}
+.MuiOutlinedInput-notchedOutline {
+  border-color: $lt-border !important;
+}
+input::placeholder {
+  color: $lt-dim !important;
+}
+
+// Search / select icons in the content area (not the sidebar nav icons)
+.gauge .MuiSvgIcon-root,
+.body_container .MuiSvgIcon-root {
+  color: $lt-dim;
+}

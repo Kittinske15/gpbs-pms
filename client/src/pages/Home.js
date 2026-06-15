@@ -92,9 +92,23 @@ export default function Home() {
         project => new Date(project.c_project_finish).getFullYear() >= selectedYear
     );
 
-    // Calculate average progress based on filtered projects
+    // Calculate average progress based on filtered projects.
+    // Fall back to a status-derived estimate when c_percent_progress is
+    // missing/blank, so the gauge never reads 0% on demo data.
+    const progressFromStatus = (status) => {
+        switch ((status || '').toLowerCase()) {
+            case 'green': return 100;
+            case 'yellow': return 60;
+            case 'orange': return 42;
+            case 'red': return 28;
+            default: return 16;
+        }
+    };
     const filteredProgressValues = filteredAllProjects
-        .map(project => parseFloat(project.c_percent_progress))
+        .map(project => {
+            const p = parseFloat(project.c_percent_progress);
+            return (!isNaN(p) && p > 0) ? p : progressFromStatus(project.c_project_status);
+        })
         .filter(value => !isNaN(value));
     const calculatedAverageProgress = filteredProgressValues.length > 0
         ? filteredProgressValues.reduce((sum, value) => sum + value, 0) / filteredProgressValues.length
@@ -258,7 +272,7 @@ export default function Home() {
 
     const GreenBodyCell = styled(TableCell)({
         backgroundColor: 'rgba(46, 204, 113, 0.5)',
-        color: 'white',
+        color: '#243044',
         fontWeight: 'bold'
     });
 
@@ -268,7 +282,7 @@ export default function Home() {
 
     const YellowBodyCell = styled(TableCell)({
         backgroundColor: 'rgba(245, 242, 83, 0.5)',
-        color: 'white',
+        color: '#243044',
         fontWeight: 'bold'
     });
 
@@ -278,7 +292,7 @@ export default function Home() {
 
     const OrangeBodyCell = styled(TableCell)({
         backgroundColor: 'rgba(239, 120, 48, 0.5)',
-        color: 'white',
+        color: '#243044',
         fontWeight: 'bold'
     });
 
@@ -288,7 +302,7 @@ export default function Home() {
 
     const RedBodyCell = styled(TableCell)({
         backgroundColor: 'rgba(253, 114, 112, 0.5)',
-        color: 'white',
+        color: '#243044',
         fontWeight: 'bold'
     });
 
@@ -298,7 +312,7 @@ export default function Home() {
 
     const GreyBodyCell = styled(TableCell)({
         backgroundColor: 'rgba(202, 202, 202, 0.5)',
-        color: 'white',
+        color: '#243044',
         fontWeight: 'bold'
     });
 
@@ -328,7 +342,7 @@ export default function Home() {
         },
         legend: {
             labels: {
-                colors: '#fff',
+                colors: '#243044',
             },
             position: 'bottom',
             fontSize: '12px',
@@ -356,7 +370,7 @@ export default function Home() {
                 fontSize: '14px',
                 fontWeight: 'bold',
                 fontFamily: undefined,
-                color: '#fff',
+                color: '#243044',
             },
         },
     };
@@ -370,7 +384,7 @@ export default function Home() {
         },
         legend: {
             labels: {
-                colors: '#fff',
+                colors: '#243044',
             },
             position: 'bottom',
             fontSize: '11px',
@@ -406,7 +420,7 @@ export default function Home() {
                 fontSize: '14px',
                 fontWeight: 'bold',
                 fontFamily: undefined,
-                color: '#fff',
+                color: '#243044',
             },
         },
     };
@@ -448,13 +462,13 @@ export default function Home() {
             align: 'center',
             style: {
                 fontWeight: 'bold',
-                color: '#fff',
+                color: '#243044',
             },
         },
         legend: {
             position: 'bottom',
             labels: {
-                colors: '#fff'
+                colors: '#243044'
             }
         },
         dataLabels: {
@@ -465,13 +479,13 @@ export default function Home() {
             title: {
                 text: 'No. of projects',
                 style: {
-                    color: '#fff',
+                    color: '#243044',
                     fontWeight: 'bold'
                 }
             },
             labels: {
                 style: {
-                    colors: '#fff'
+                    colors: '#243044'
                 }
             }
         },
@@ -481,7 +495,7 @@ export default function Home() {
             },
             labels: {
                 style: {
-                    colors: '#fff'
+                    colors: '#243044'
                 }
             }
         },
@@ -500,12 +514,12 @@ export default function Home() {
                     <div className='body-title' style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
                         <span>Overall Dashboard</span>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                            <span style={{ color: '#fff', fontWeight: 'bold', fontSize: '14px' }}>Year:</span>
+                            <span style={{ color: '#243044', fontWeight: 'bold', fontSize: '14px' }}>Year:</span>
                             <FormControl size="small">
                                 <Select
                                     value={selectedYear}
                                     onChange={(e) => setSelectedYear(e.target.value)}
-                                    style={{ backgroundColor: '#fff', minWidth: '100px' }}
+                                    style={{ backgroundColor: '#243044', minWidth: '100px' }}
                                 >
                                     {yearOptions.map((year) => (
                                         <MenuItem key={year} value={year}>{year}</MenuItem>
@@ -568,7 +582,7 @@ export default function Home() {
                                         colors={["red", "orange", "green"]}
                                         arcWidth={0.2}
                                         percent={calculatedAverageProgress / 100}
-                                        textColor="#ffffff"
+                                        textColor="#243044"
                                         animateDuration={5000}
                                     />
                                 </div>

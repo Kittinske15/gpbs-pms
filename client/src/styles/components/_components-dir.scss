@@ -10,3 +10,5 @@
 @import "./create-project";
 @import "./my-project";
 @import "./analyst";
+// Light theme — keep LAST so it overrides the dark styles above.
+@import "./theme-light";
