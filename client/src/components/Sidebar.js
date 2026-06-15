@@ -14,6 +14,7 @@ import LockResetIcon from '@mui/icons-material/LockReset';
 import EditIcon from '@mui/icons-material/Edit';
 import LogoutIcon from '@mui/icons-material/Logout';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
+import AssessmentIcon from '@mui/icons-material/Assessment';
 import SmartToyIcon from '@mui/icons-material/SmartToy';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -194,8 +195,8 @@ export default function Sidebar({ onToggle }) {
                             >
                                 BALANCED SCORECARD
                             </motion.h3>
-                            <a className='nav-item' target="_blank" href={`http://ibsdo.com:3303?token=${localStorage.getItem('token')}`}>
-                                <Item icon={<TravelExploreIcon />} name="iCentral PMS" />
+                            <a className='nav-item' target="_blank" href={`https://ibsdo.com/gpbs-bsc/?token=${localStorage.getItem('token')}`}>
+                                <Item icon={<AssessmentIcon />} name="Balanced Scorecard" />
                             </a>
                             <a className='nav-item' style={{ pointerEvents: 'none', opacity: 0.5 }}>
                                 <Item icon={<AutoGraphIcon />} name="Forecasting" />
