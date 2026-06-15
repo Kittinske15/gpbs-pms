@@ -72,7 +72,7 @@ export default function Project() {
                 align: 'center',
                 style: {
                     fontSize: '18px',
-                    color: '#fff',
+                    color: '#243044',
                 },
             },
             labels: ['Completed', 'On Process', 'Not Start', 'Incompleted', 'Delay'],
@@ -89,7 +89,7 @@ export default function Project() {
             legend: {
                 position: 'bottom',
                 labels: {
-                    colors: ['#fff'],
+                    colors: ['#243044'],
                 },
             },
             responsive: [
@@ -134,7 +134,7 @@ export default function Project() {
                             <div className='project-title'>MEDIA : {filteredMedia.length} Projects</div>
                             <div className='project-title'>CONTENT : {filteredContent.length} Projects</div>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                <label style={{ color: '#fff', fontWeight: 'bold' }}>Year:</label>
+                                <label style={{ color: '#243044', fontWeight: 'bold' }}>Year:</label>
                                 <select
                                     value={selectedYear}
                                     onChange={(e) => setSelectedYear(parseInt(e.target.value))}

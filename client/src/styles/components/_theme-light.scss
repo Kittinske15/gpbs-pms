@@ -9,17 +9,26 @@
 //   text  #243044    dim  #5b6b88    accent #1670c9
 // ===========================================================================
 
-$lt-page: #eef3f9;
-$lt-card: #ffffff;
-$lt-border: #e3e9f2;
-$lt-text: #243044;
+// Softer, less-glaring light palette (off-white cards on a calm blue-grey page).
+$lt-page: #dfe6f0;
+$lt-card: #f6f9fc;
+$lt-border: #d6dfec;
+$lt-text: #233044;
 $lt-dim: #5b6b88;
-$lt-accent: #1670c9;
-$lt-shadow: 0 4px 16px rgba(20, 40, 80, 0.07);
+$lt-accent: #1763b6;
+$lt-shadow: 0 3px 12px rgba(20, 40, 80, 0.08);
 
 // ---- App shell ------------------------------------------------------------
 .App {
-  background: linear-gradient(180deg, #eef3f9 0%, #e6edf6 100%) !important;
+  background: linear-gradient(180deg, #e4ebf3 0%, #d7e0ec 100%) !important;
+  color: $lt-text;
+}
+
+// Default content text to dark so page titles/headers that were white become
+// readable on the light background (colored buttons/badges set their own).
+.body_container,
+.body-grid,
+.body-grid-close {
   color: $lt-text;
 }
 
@@ -110,4 +119,43 @@ input::placeholder {
 .gauge .MuiSvgIcon-root,
 .body_container .MuiSvgIcon-root {
   color: $lt-dim;
+}
+
+// ---- Year / other dropdowns (were dark boxes with invisible text) ---------
+.MuiSelect-select,
+select {
+  background-color: #ffffff !important;
+  color: $lt-text !important;
+}
+.MuiSelect-icon { color: $lt-dim !important; }
+
+// ---- Page titles / headers that were white-on-dark ------------------------
+// These sit on the now-light background and were invisible.
+.body-title,
+.project-title,
+.prioritization-body-title,
+.finance-title,
+.member-title,
+.my-project-header h1,
+.section-title,
+h1, h2 {
+  color: $lt-text !important;
+}
+
+// Light info panels (e.g. Project "PROJECT STATUS" card) -> give structure
+.project-card,
+.project-chart-grid .project-card {
+  background: $lt-card !important;
+  border: 1px solid $lt-border;
+  box-shadow: $lt-shadow;
+  color: $lt-text !important;
+}
+
+// Pill tabs (My Project / Project team toggles): readable when not selected
+.tab-btn {
+  color: $lt-accent !important;
+}
+.tab-btn.active,
+.tab-btn[class*="active"] {
+  color: #ffffff !important; // active tab keeps its filled background
 }

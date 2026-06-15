@@ -576,14 +576,15 @@ export default function Home() {
                             <div className='gauge-grid'>
                                 <div className='gauge-container'>
                                     <GaugeChart
+                                        key={`gauge-${Math.round(calculatedAverageProgress)}`}
                                         className='gauge-card'
                                         id="gauge-chart2"
                                         nrOfLevels={5}
-                                        colors={["red", "orange", "green"]}
+                                        colors={["#e2433b", "#f2c200", "#36c46b"]}
                                         arcWidth={0.2}
                                         percent={calculatedAverageProgress / 100}
                                         textColor="#243044"
-                                        animateDuration={5000}
+                                        animate={false}
                                     />
                                 </div>
                                 <div className='chart-container project-status-chart'>

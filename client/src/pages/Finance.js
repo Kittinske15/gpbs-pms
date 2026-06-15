@@ -270,7 +270,7 @@ export default function Finance() {
         },
         legend: {
             labels: {
-                colors: '#fff',
+                colors: '#243044',
             },
             position: 'bottom',
             formatter: function(seriesName) {
@@ -309,7 +309,7 @@ export default function Finance() {
             style: {
                 fontSize: '14px',
                 fontWeight: 'bold',
-                color: '#fff',
+                color: '#243044',
             },
         },
     };
@@ -333,7 +333,7 @@ export default function Finance() {
             text: 'YTD Benefit Return (MB)',
             align: 'center',
             style: {
-                color: '#fff',
+                color: '#243044',
                 fontWeight: 'bold'
             },
         },
@@ -341,14 +341,14 @@ export default function Finance() {
             categories: ['MEDIA TEAM', 'CONTENT TEAM'],
             labels: {
                 style: {
-                    colors: '#fff',
+                    colors: '#243044',
                 },
             },
         },
         yaxis: {
             labels: {
                 style: {
-                    colors: '#fff',
+                    colors: '#243044',
                 },
                 formatter: function(val) {
                     return val.toLocaleString();
@@ -358,7 +358,7 @@ export default function Finance() {
         legend: {
             position: 'bottom',
             labels: {
-                colors: '#fff'
+                colors: '#243044'
             }
         },
         dataLabels: {
@@ -409,7 +409,7 @@ export default function Finance() {
                     <div className='body-title' style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
                         <span>CURRENT YTD RETURN</span>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                            <span style={{ color: '#fff', fontWeight: 'bold', fontSize: '14px' }}>Year:</span>
+                            <span style={{ color: '#243044', fontWeight: 'bold', fontSize: '14px' }}>Year:</span>
                             <FormControl size="small">
                                 <Select
                                     value={selectedYear}
